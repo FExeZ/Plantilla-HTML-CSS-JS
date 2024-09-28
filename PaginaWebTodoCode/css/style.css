@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+.home-page {
+    background-image: url('../images/Fondos/pizzaHorno.jpg');
+    background-size: cover; /* Ajusta la imagen a cubrir el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    height: 100vh; /* Asegúrate de que la altura sea exactamente la altura de la ventana */
+    overflow: hidden; /* Oculta el desbordamiento vertical */
+    padding: 0; /* Ajusta según tus necesidades */
+    color: #ffffff; /* Cambia el color del texto, si es necesario */
+    margin-top: 100px;
+}
+
+.imagesOfPizzas {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pizza {
+    flex-basis: 25%;
+    /* Muestra 4 pizzas */
+    text-align: center;
+    /* Centra el contenido dentro de cada div de pizza */
+    display: none;
+    /* Oculta por defecto, se mostrará con la clase show */
+    opacity: 0;
+    /* Comienza con opacidad 0 para la animación */
+    transition: opacity 0.5s ease;
+    /* Suaviza la transición de opacidad */
+}
+
+.pizza.show {
+    display: block;
+    /* Muestra las pizzas que tienen la clase 'show' */
+    opacity: 1;
+    /* Cambia la opacidad a 1 para mostrar la pizza */
+    animation: slideIn 0.5s forwards;
+    /* Aplicar animación de entrada */
+}
+
+.pizza:not(.show) {
+    animation: slideOut 0.5s forwards;
+    /* Aplicar animación de salida */
+}
+
+.pizza img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+.arrow {
+    background-color: rgba(99, 99, 99, 0.2);
+    /* Color de fondo con transparencia */
+    border-radius: 50%;
+    /* Bordes redondeados para hacerlo circular */
+    border: none;
+    width: 50px;
+    /* Establece un ancho fijo */
+    height: 50px;
+    /* Establece una altura fijo */
+    padding: 0;
+    /* Remover padding para evitar desajustes */
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Centra el botón completamente */
+    transition: background-color 0.3s ease;
+    /* Transición para un efecto al pasar el mouse */
+}
+
+.arrow.left {
+    left: 50px;
+    /* Ajusta este valor */
+    z-index: 10;
+    /* Asegúrate de que este valor sea alto */
+}
+
+.arrow.right {
+    right: 20px;
+    /* Mantén este valor si ya está bien */
+    z-index: 10;
+    /* Asegúrate de que este valor sea alto */
+}
+
+
+.arrow:hover {
+    background-color: rgba(99, 99, 99, 0.9);
+    /* Color más oscuro al pasar el mouse */
+}
+
+
+
+
+@media (max-width: 768px) {
+    .pizza {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pizza {
+        flex-basis: 100%;
+    }
+}
+
+/*MENU*/
+
+.header-container {
+    background: #84d679;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.header-container {
+    max-width: 1100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Estilo del texto Don Torcuato */
+.name-brand {
+    font-family: 'Poppins', sans-serif;
+    /* Fuente personalizada */
+    font-weight: 600;
+    /* Peso de la fuente */
+    font-size: 24px;
+    /* Tamaño del texto */
+    color: #ffffff;
+    /* Color del texto */
+    text-decoration: none;
+    /* Quitar subrayado del enlace */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+    margin-right: 10px;
+    /* Espacio entre el texto y el icono */
+    white-space: nowrap;
+    /* Evita que el texto se divida en dos líneas */
+}
+
+/* Cambiar el color del texto al pasar el mouse */
+.name-brand:hover {
+    color: #a30000;
+    transition: color 0.3s ease;
+    /* Un color negro al pasar el mouse */
+}
+
+/* Contenedor principal del logo y el nombre */
+.logo-name {
+    display: flex;
+    /* Flexbox para alinear los elementos en la misma fila */
+    align-items: center;
+    /* Alinea verticalmente el texto y el icono */
+}
+
+/* Ajuste del icono */
+.logo-name img {
+    width: 25px;
+    /* Ancho del icono */
+    height: 25px;
+    /* Altura del icono */
+}
+
+/* Asegúrate de que el nav ocupa el ancho completo del contenedor */
+#nav {
+    width: 100%;
+    text-align: center;
+    /* Alinea los elementos dentro del nav */
+    overflow: hidden;
+    /* Evita desbordamientos */
+}
+
+/* Centra los elementos de la lista */
+.navbar {
+    display: inline-block;
+    /* Asegura que los elementos se centren correctamente */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /* Remueve los bullets de la lista */
+}
+
+/* Asegúrate de que los elementos de la lista estén alineados horizontalmente */
+.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+    /* Espaciado entre los elementos */
+}
+
+/* Estilo de los enlaces */
+.nav-link {
+    text-decoration: none;
+    /* Remueve el subrayado */
+    color: #ffffff;
+    /* Color del texto */
+    font-size: 18px;
+    /* Tamaño de fuente */
+    transition: color 0.3s ease;
+    /* Transición para un hover suave */
+}
+
+/* Cambia el color al pasar el mouse */
+.nav-link:hover {
+    color: #a30000;
+    /* Color de hover */
+}
+
+/* Asegura que el contenido tenga un margen superior para evitar que se superponga con el header */
+.default-page {
+    margin-top: 100px;
+    /* Ajusta según el tamaño del menú superior */
+    padding: 20px;
+    /* Añade algo de espacio alrededor del contenido */
+}
+
+.paragraph {
+    font-family: 'Bebas Neue', sans-serif;
+    /* Aplica la fuente Fredoka */
+    font-size: 16px;
+    line-height: 1.6;
+    /* Mejora la legibilidad */
+    color: #ffffff;
+}
+
+.nav-link {
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1.6;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        /* Desde la derecha */
+        opacity: 0;
+        /* Comienza invisible */
+    }
+
+    to {
+        transform: translateX(0);
+        /* En su posición final */
+        opacity: 1;
+        /* Totalmente visible */
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        /* En su posición final */
+        opacity: 1;
+        /* Totalmente visible */
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* Desplazándose hacia la izquierda */
+        opacity: 0;
+        /* Invisible */
+    }
+}
+
+.menu-page {
+    background-image: url('../images/Fondos/pizzaMenu.jpg');
+    background-size: cover; /* Ambas imágenes cubrirán el área */
+    background-position: center; /* Posición de las imágenes */
+    background-repeat: no-repeat; /* No repetir imágenes */
+    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza el contenido */
+    color: #ffffff;
+    min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana */
+    margin-top: 100px; /* Asegura que todo el contenido esté separado de la barra de navegación */
+    position: relative; /* Necesario para el z-index */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+}
+
+
+.menu {
+    padding-left: 100px; /* Espacio desde el borde izquierdo */
+}
+
+.titulos-pizza {
+    font-size: 24px; /* Tamaño de la fuente */
+    color: #fff; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    margin: 20px 20px; /* Espaciado superior e inferior */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra de texto para mejorar la legibilidad */
+    font-family: 'Bebas Neue', sans-serif; /* Tipo de fuente */
+}
+
+.pizza-item {
+    display: flex; /* Usa flexbox para alinear la imagen y el título */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 20px; /* Espacio entre las pizzas */
+}
+
+.about-page {
+    background-image: url('../images/Fondos/pizzaHorno.jpg');
+    background-size: cover; /* Ajusta la imagen a cubrir el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    height: 100vh; /* Asegúrate de que la altura sea exactamente la altura de la ventana */
+    overflow: hidden; /* Oculta el desbordamiento vertical */
+    padding: 0; /* Ajusta según tus necesidades */
+    color: #ffffff; /* Cambia el color del texto, si es necesario */
+    margin-top: 100px;
+}
+
+.about-page {
+    background-color: #fafafa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f76c6c;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-section strong {
+    color: #f76c6c;
+}
+
+.nav-link-about {
+    text-decoration: none;
+    /* Remueve el subrayado */
+    color: #000000;
+    /* Color del texto */
+    font-size: 18px;
+    /* Tamaño de fuente */
+    transition: color 0.3s ease;
+    /* Transición para un hover suave */
+}
+
+.nav-link-about:hover {
+    color: #a30000;
+    /* Color de hover */
+}
+
+
+.contact-page {
+    background-image: url('../images/Fondos/pizzaHorno.jpg');
+    background-size: cover; /* Ajusta la imagen a cubrir el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    height: 100vh; /* Asegúrate de que la altura sea exactamente la altura de la ventana */
+    overflow: hidden; /* Oculta el desbordamiento vertical */
+    padding: 0; /* Ajusta según tus necesidades */
+    color: #ffffff; /* Cambia el color del texto, si es necesario */
+    margin-top: 100px;
+}
+
+.contact-font{
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Estilos para centrar el formulario */
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* Ajusta el ancho del formulario */
+    max-width: 500px;
+}
+
+form label {
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 10px 20px;
+    background-color: #f76c6c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #f05454;
+}
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Torcuato</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="contact-page">
+    <div class="header-container">
+        <div class="logo-name">
+            <a class="name-brand" href="index.html">
+                Don Torcuato
+            </a>
+            <img src="images/Iconos/pizzaicono.png" width="25" height="25">
+        </div>
+        <nav id="nav">
+            <ul class="navbar">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menú</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="contact-form-container">
+        <h2 class="contact-font">Contáctanos</h2>
+        <form action="submit_contact.php" method="post">
+            <label for="name">Email:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="subject">Asunto:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Descripción:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
